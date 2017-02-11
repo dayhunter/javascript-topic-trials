@@ -1,8 +1,8 @@
-# IBM Bluemix Garage Bootcamp
+# IBM Bluemix Garage Method Bootcamp
 
-# angular.js-1.x-reference-app
+# javascript topic trials
 
-## javascript topic trials
+## trials and tribulations of TDD and Merciless Refactoring
 
 ####Change your node version, clone the repo, install and run the tests:
 

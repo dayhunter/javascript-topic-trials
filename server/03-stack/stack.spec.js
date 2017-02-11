@@ -4,5 +4,20 @@ describe('the stack spec', () => {
   });
 
   describe('a stack should', () => {
+    it('be empty');
+
+    it('leave stack size 1 when pushed');
+
+    it('leave stack empty when pushed and popped');
+
+    it('overflow');
+
+    it('underflow');
+
+    it('get same one back when pushed then popped');
+
+    it('leave stack empty when pushed twice and popped twice');
+
+    it('handle stack with negative size');
   });
 });

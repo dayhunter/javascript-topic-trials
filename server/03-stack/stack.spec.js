@@ -3,7 +3,9 @@ describe('the stack spec', () => {
     true.should.be.true();
   });
 
-  let stack = {};
+  let stack = {
+    isEmpty() {return true;}
+  };
 
   describe('a stack should', () => {
     it('be empty', () => {

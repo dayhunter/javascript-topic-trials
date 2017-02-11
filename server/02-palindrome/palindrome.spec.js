@@ -1,10 +1,10 @@
-describe('the palindrome canary test', () => {
+describe('the palindrome canary spec', () => {
   it('shows the infrastructure works', () => {
     true.should.be.true();
   });
 
   describe('palindrome should be', () => {
-    it('yes for mom');
-    it('no for dude');
+    it('true for mom');
+    it('false for dude');
   });
 });

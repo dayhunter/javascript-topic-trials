@@ -12,7 +12,10 @@ describe('the stack spec', () => {
       stack.isEmpty().should.be.true();
     });
 
-    it('leave stack size 1 when pushed');
+    it('leave stack size 1 when pushed', () => {
+      stack.push({});
+      stack.size().should.equal(1);
+    });
 
     it('leave stack empty when pushed and popped');
 

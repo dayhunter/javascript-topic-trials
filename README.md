@@ -19,10 +19,10 @@ ___
 
 ###[The Four Rules of Simple Design](https://martinfowler.com/bliki/BeckDesignRules.html):
 
-* #####Passes the tests
-* #####Reveals intention
-* #####No duplication
-* #####Fewest elements
+* ####Passes the tests
+* ####Reveals intention
+* ####No duplication
+* ####Fewest elements
 
 ___
 

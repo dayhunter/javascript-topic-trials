@@ -6,6 +6,7 @@ describe.only('the stack spec', () => {
   let makeStack = (capacity = 2) => {
     let queue = [];
     const isEmpty = () => queue.length === 0;
+    if (capacity < 0) throw new Error('bad capacity error');
 
     const pop = () => {
       if (queue.length === 0 ) throw new Error('underflow error');
@@ -84,6 +85,8 @@ describe.only('the stack spec', () => {
       stack.size().should.equal(0);
     });
 
-    it('handles stack with negative size');
+    it('handles stack with negative size', () => {
+      (() => { makeStack(-1); }).should.throw('bad capacity error');
+    });
   });
 });

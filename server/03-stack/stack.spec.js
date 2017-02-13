@@ -4,23 +4,20 @@ describe.only('the stack spec', () => {
   });
 
   let makeStack = (capacity = 2) => {
-    let current = 0;
-    let queue = null;
+    let queue = [];
+    const isEmpty = () => queue.length === 0;
 
-    const isEmpty = () => current === 0;
     const pop = () => {
-      if (current === 0 ) throw new Error('underflow error');
-      current--;
-      return queue;
+      if (queue.length === 0 ) throw new Error('underflow error');
+      return queue.pop();
     };
 
     const push = (element) => {
-      if (current === capacity) throw new Error('overflow error');
-      queue = element;
-      current++;
+      if (queue.length === capacity) throw new Error('overflow error');
+      queue.push(element);
     };
 
-    const size = () => current;
+    const size = () => queue.length;
 
     return {
       isEmpty,
@@ -72,7 +69,20 @@ describe.only('the stack spec', () => {
       stack.pop().should.equal(element);
     });
 
-    it('leaves stack empty when pushed twice and popped twice');
+    it('leaves stack empty when pushed twice and popped twice', () => {
+      const element1 = {};
+      const element2 = {};
+      stack.size().should.equal(0);
+      stack.push(element1);
+      stack.size().should.equal(1);
+      stack.push(element2);
+      stack.size().should.equal(2);
+      stack.pop().should.equal(element2);
+      stack.size().should.equal(1);
+      stack.pop().should.equal(element1);
+      stack.isEmpty().should.be.true();
+      stack.size().should.equal(0);
+    });
 
     it('handles stack with negative size');
   });

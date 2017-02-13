@@ -40,14 +40,14 @@ describe.only('the stack spec', () => {
       stack.isEmpty().should.be.true();
     });
 
-    it('overflow');
+    it('overflows');
 
-    it('underflow');
+    it('underflows');
 
-    it('get same one back when pushed then popped');
+    it('gets same one back when pushed then popped');
 
-    it('leave stack empty when pushed twice and popped twice');
+    it('leaves stack empty when pushed twice and popped twice');
 
-    it('handle stack with negative size');
+    it('handles stack with negative size');
   });
 });

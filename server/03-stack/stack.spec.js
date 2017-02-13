@@ -5,16 +5,19 @@ describe.only('the stack spec', () => {
 
   let makeStack = (capacity = 2) => {
     let current = 0;
+    let queue = null;
 
     const isEmpty = () => true;
     const pop = () => {
       if (current === 0 ) throw new Error('underflow error');
       current--;
+      return queue;
     };
 
-    const push = () => {
-      if (current === capacity ) throw new Error('overflow error');
-      return current++;
+    const push = (element) => {
+      if (current === capacity) throw new Error('overflow error');
+      queue = element;
+      current++;
     };
 
     const size = () => current;

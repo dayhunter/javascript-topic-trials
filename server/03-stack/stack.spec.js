@@ -40,7 +40,11 @@ describe.only('the stack spec', () => {
       stack.isEmpty().should.be.true();
     });
 
-    it('overflows');
+    it('overflows', () => {
+      (() => { stack.push(); }).should.not.throw('overflow error');
+      (() => { stack.push(); }).should.not.throw('overflow error');
+      (() => { stack.push(); }).should.throw('overflow error');
+    });
 
     it('underflows');
 

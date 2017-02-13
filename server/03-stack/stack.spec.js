@@ -1,19 +1,20 @@
-describe('the stack spec', () => {
+describe.only('the stack spec', () => {
   it('shows the infrastructure works', () => {
     true.should.be.true();
   });
 
   let stack = {
-    isEmpty() {return true;},
-    push() {}
+    isEmpty() { return true; },
+    push() {},
+    size() { return 1; }
   };
 
-  describe('a stack should', () => {
-    it('be empty', () => {
+  describe('a stack', () => {
+    it('starts empty', () => {
       stack.isEmpty().should.be.true();
     });
 
-    it('leave stack size 1 when pushed', () => {
+    it('leaves stack size 1 when pushed', () => {
       stack.push({});
       stack.size().should.equal(1);
     });

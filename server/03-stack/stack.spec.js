@@ -7,7 +7,7 @@ describe.only('the stack spec', () => {
     let current = 0;
     let queue = null;
 
-    const isEmpty = () => true;
+    const isEmpty = () => current === 0;
     const pop = () => {
       if (current === 0 ) throw new Error('underflow error');
       current--;

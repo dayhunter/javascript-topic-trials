@@ -58,7 +58,11 @@ describe.only('the stack spec', () => {
       (() => { stack.pop(); }).should.throw('underflow error');
     });
 
-    it('gets same one back when pushed then popped');
+    it('gets same one back when pushed then popped', () => {
+      const element = {};
+      stack.push(element);
+      stack.pop().should.equal(element);
+    });
 
     it('leaves stack empty when pushed twice and popped twice');
 

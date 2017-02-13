@@ -3,12 +3,17 @@ describe.only('the stack spec', () => {
     true.should.be.true();
   });
 
-  let makeStack = () => {
+  let makeStack = (capacity = 2) => {
     let current = 0;
 
     const isEmpty = () => true;
     const pop = () => current--;
-    const push = () => current++;
+
+    const push = () => {
+      if (current === capacity ) throw new Error('overflow error');
+      return current++;
+    };
+
     const size = () => current;
 
     return {
@@ -46,7 +51,9 @@ describe.only('the stack spec', () => {
       (() => { stack.push(); }).should.throw('overflow error');
     });
 
-    it('underflows');
+    it('underflows', () => {
+      (() => { stack.pop(); }).should.throw('underflow error');
+    });
 
     it('gets same one back when pushed then popped');
 

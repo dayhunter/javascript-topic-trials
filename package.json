@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "lint": "esw -f simple-detail web server",
-    "lint:watch": "npm run lint -- --watch",
-    "spec": "nyc --reporter=lcov --reporter=text --require babel-register mocha --compilers js:babel-register --reporter spec --growl --recursive ./test-helper.js  server/**/*.spec.js",
-    "spec:watch": "nodemon --exec 'npm run spec'",
-    "tdd": "npm run spec:watch",
+    "lint:watch": "nodemon 2>/dev/null  --exec 'npm run lint'",
+    "coverage": "nyc --reporter=lcov --reporter=text --require babel-register mocha --compilers js:babel-register --reporter spec --growl --recursive ./test-helper.js  server/**/*.spec.js",
+    "spec": "mocha --compilers js:babel-register --reporter spec --growl --recursive ./test-helper.js  server/**/*.spec.js",
+    "spec:watch": "nodemon 2>/dev/null  --exec 'npm run spec || true'",
+    "tdd": "npm-run-all --parallel *:watch",
     "test": "karma start karma.conf.js"
   },
   "repository": {
@@ -69,6 +70,7 @@
     "mocha": "3.2.0",
     "node-libs-browser": "2.0.0",
     "nodemon": "1.11.0",
+    "npm-run-all": "4.0.1",
     "nyc": "10.0.0",
     "raw-loader": "0.5.1",
     "script-loader": "0.7.0",

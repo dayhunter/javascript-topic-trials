@@ -4,12 +4,17 @@ describe.only('the stack spec', () => {
   });
 
   let makeStack = () => {
+    let current = 0;
+
     const isEmpty = () => true;
-    const push = () => {};
-    const size = () => 1;
+    const pop = () => current--;
+    const push = () => current++;
+    const size = () => current;
+
 
     return {
       isEmpty,
+      pop,
       push,
       size
     };

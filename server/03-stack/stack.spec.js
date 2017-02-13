@@ -11,7 +11,6 @@ describe.only('the stack spec', () => {
     const push = () => current++;
     const size = () => current;
 
-
     return {
       isEmpty,
       pop,
@@ -31,12 +30,12 @@ describe.only('the stack spec', () => {
     });
 
     it('leaves stack size 1 when pushed', () => {
-      stack.push({});
+      stack.push();
       stack.size().should.equal(1);
     });
 
-    it('leave stack empty when pushed and popped', () => {
-      stack.push({});
+    it('leaves stack empty when pushed and popped', () => {
+      stack.push();
       stack.pop();
       stack.isEmpty().should.be.true();
     });

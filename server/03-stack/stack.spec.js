@@ -3,13 +3,20 @@ describe.only('the stack spec', () => {
     true.should.be.true();
   });
 
-  let stack = {
-    isEmpty() { return true; },
-    push() {},
-    size() { return 1; }
+  let makeStack = () => {
+    return {
+      isEmpty() { return true; },
+      push() {},
+      size() { return 1; }
+    };
   };
 
   describe('a stack', () => {
+    let stack = null;
+    beforeEach(() => {
+      stack = makeStack();
+    });
+
     it('starts empty', () => {
       stack.isEmpty().should.be.true();
     });

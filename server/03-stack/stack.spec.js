@@ -7,7 +7,10 @@ describe.only('the stack spec', () => {
     let current = 0;
 
     const isEmpty = () => true;
-    const pop = () => current--;
+    const pop = () => {
+      if (current === 0 ) throw new Error('underflow error');
+      current--;
+    };
 
     const push = () => {
       if (current === capacity ) throw new Error('overflow error');
